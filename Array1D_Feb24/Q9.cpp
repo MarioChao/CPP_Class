@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void findValueInRandomArray() {
+void findValueSlotInRandomArray() {
     // Create an array of 10 integer slots
     int arr[10];
 
@@ -42,5 +42,5 @@ void findValueInRandomArray() {
 }
 
 int main() {
-    findValueInRandomArray();
+    findValueSlotInRandomArray();
 }
