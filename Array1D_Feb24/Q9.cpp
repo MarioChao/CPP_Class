@@ -9,22 +9,11 @@ void findValueInRandomArray() {
     // Create an array of 10 integer slots
     int arr[10];
 
-    // Create a vector that keeps track of unused numbers (1-50)
-    vector<int> unused;
-    unused.clear();
-    for (int i = 1; i <= 50; i++) {
-        unused.push_back(i);
-    }
-
-    // Fill each slot with a different random value from 1-50
+    // Fill each slot with a random value from 1-50
     srand(time(0));
     for (int i = 0; i < 10; i++) {
         // Generate random number by id
-        int id = rand() % ((int) unused.size());
-        arr[i] = unused[id];
-        // Delete the number from unused
-        swap(unused[id], unused.back());
-        unused.pop_back();
+        arr[i] = (rand() % 50) + 1;
     }
 
     // Display the values
@@ -43,7 +32,7 @@ void findValueInRandomArray() {
     bool foundKey = 0;
     for (int i = 0; i < 10; i++) {
         if (arr[i] == userKey) {
-            cout << "The item " << userKey << " is in the array.\n";
+            cout << "The item " << userKey << " is in slot " << i << ".\n";
             foundKey |= 1;
         }
     }
